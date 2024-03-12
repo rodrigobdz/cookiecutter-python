@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Install dependencies.
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# shellcheck disable=SC1091
+source utils.sh
+
+fancy_echo "Remove old virtual environment"
+rm -rf .venv
+
+fancy_echo "Create virtual environment"
+uv venv
+
+# Probably redundant, but just in case
+fancy_echo "Activate virtual environment"
+# shellcheck disable=SC1091
+source .venv/bin/activate
+
+fancy_echo "Install dependencies"
+uv pip install --requirement pyproject.toml

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["{{ cookiecutter.project_name.lower().replace(' ', '_') }}"]
+package-dir = { "" = "src" }
+
+[project]
+name = "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
+version = "0.0.1"
+dependencies = ["requests", 'importlib-metadata; python_version<"3.10"']
+
+[project.optional-dependencies]
+notebook = ["ipykernel", "ipywidgets", "notebook", "jupyterlab"]

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# Install Python package.
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# shellcheck disable=SC1091
+source utils.sh
+
+fancy_echo "Install Python package"
+uv pip install --editable .

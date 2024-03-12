@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# Run Python package.
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# shellcheck disable=SC1091
+source utils.sh
+
+fancy_echo "Activate virtual environment"
+# shellcheck disable=SC1091
+source .venv/bin/activate
+
+fancy_echo "Run Python package"
+python src/{{ cookiecutter.project_name.lower().replace(' ', '_') }}/main.py

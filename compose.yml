@@ -1,0 +1,12 @@
+services:
+  jupyer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    restart: unless-stopped
+    command: bash -c "jupyter lab --port=7777 --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token='' --NotebookApp.password=''"
+    ports:
+      - "7777:7777"
+    volumes:
+      - .:/home/jovyan/work/
