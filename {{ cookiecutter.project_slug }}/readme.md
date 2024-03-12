@@ -1,23 +1,30 @@
-# Cookiecutter Python Package
+# {{ cookiecutter.project_name }}
 
 ## Requirements
 
-- [`pipx`](https://pipx.pypa.io/stable/)
+- macOS
+- Install [uv](https://astral.sh/blog/uv)
 
 ## Installation
 
-- Install [`cookiecutter`](https://cookiecutter.readthedocs.io/en/stable/README.html#installation)
+- Install Python dependencies
 
   ```sh
-  pipx install cookiecutter
+  ./script/bootstrap
+  ```
+
+- Install Python package
+
+  ```sh
+  ./script/install
   ```
 
 ## Usage
 
-- Generate a new Python package
+- Run Python package
 
   ```sh
-  pipx run cookiecutter gh:rodrigobdz/cookiecutter-python
+  ./script/run
   ```
 
 ## Contributing
